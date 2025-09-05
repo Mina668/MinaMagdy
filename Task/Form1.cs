@@ -11,6 +11,7 @@ namespace Task
         private readonly IEmployeeServices _employeeService;
         private readonly IUnitOfWork _unitOfWork;
 
+        private bool _photoChanged = false;
 
         public Form1(IEmployeeServices employeeService)
         {
@@ -42,6 +43,9 @@ namespace Task
             dataGridView1.Columns.Add(imgCol);
 
             dataGridView1.DataSource = employees;
+            comboBox1.DataSource = employees;
+            comboBox1.DisplayMember = "Name";  // what the user sees
+            comboBox1.ValueMember = "Id";
         }
 
 
@@ -142,14 +146,25 @@ namespace Task
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox1.SelectedValue is int selectedId)
+            {
+                var emp = _employeeService.GetEmployeeById(selectedId);
+                if (emp != null)
+                {
+                    txtid.Text = emp.Id.ToString();
+                    txtName.Text = emp.Name;
+                    txtJob.Text = emp.Job;
+                    txtSalary.Text = emp.Salary.ToString();
+                    pictureBox1.Image = emp.displayphoto;
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow != null)
             {
-                var emp = dataGridView1.CurrentRow.DataBoundItem as Employee;
+                var emp = _employeeService.GetEmployeeById(int.Parse(txtid.Text));
                 if (emp != null)
                 {
                     emp.Name = txtName.Text;
@@ -162,14 +177,22 @@ namespace Task
                         return;
                     }
                     emp.Salary = salary;
-                    
-                    emp.displayphoto = pictureBox1.Image;
+                    if (_photoChanged) 
+                    {
+                        emp.displayphoto = pictureBox1.Image;
+                    }
 
-                    
+
 
                     _employeeService.UpdateEmployee(emp);
                     LoadEmployees();
                     MessageBox.Show("Employee updated successfully!");
+                    txtid.Clear();
+                    txtName.Clear();
+                    txtJob.Clear();
+                    txtSalary.Clear();
+                    pictureBox1.Image = null;
+                    _photoChanged = false;
                 }
             }
         }
@@ -199,7 +222,7 @@ namespace Task
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
                       pictureBox1.Image = Image.FromFile(dlg.FileName) as Image;
-                    
+                     _photoChanged = true;
                 }
             }
         }

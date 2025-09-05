@@ -197,9 +197,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(374, 303);
             label6.Name = "label6";
-            label6.Size = new Size(53, 20);
+            label6.Size = new Size(90, 20);
             label6.TabIndex = 16;
-            label6.Text = "Search";
+            label6.Text = "Search by Id";
             // 
             // textBox5
             // 

@@ -32,8 +32,9 @@ namespace Task.CoreLayer.Repository
 
         public T GetById(int id)
         {
-          
-            return _dbSet.AsNoTracking().FirstOrDefault(e => EF.Property<int>(e, "Id") == id);
+            var keyName = _context.Model.FindEntityType(typeof(T))
+                .FindPrimaryKey().Properties.Select(keyName => keyName.Name).Single();
+            return _dbSet.AsNoTracking().FirstOrDefault(t => EF.Property<int>(t,keyName) == id);
         }
 
         
@@ -44,7 +45,26 @@ namespace Task.CoreLayer.Repository
         }
         public void Update(T entity)
         {
-                    _context.Entry(entity).State = EntityState.Modified;
+            var entityType = _context.Model.FindEntityType(typeof(T));
+            var keyName = entityType.FindPrimaryKey().Properties
+                                    .Select(p => p.Name)
+                                    .Single();
+
+            // Get entity key value using reflection
+            var entityId = entity.GetType().GetProperty(keyName).GetValue(entity);
+
+            // Check if EF is already tracking an entity with this ID
+            var local = _dbSet.Local
+                .FirstOrDefault(e => e.GetType().GetProperty(keyName).GetValue(e).Equals(entityId));
+
+            if (local != null)
+            {
+                // Detach the existing tracked entity
+                _context.Entry(local).State = EntityState.Detached;
+            }
+
+            // Attach new entity and mark as modified
+            _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(int Id)
