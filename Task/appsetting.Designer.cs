@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task.PresentationLayer {
+namespace Task6.PresentationLayer {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

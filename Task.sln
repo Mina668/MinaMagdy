@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
+VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.PresentationLayer", "Task\Task.PresentationLayer.csproj", "{41C212C8-E2C2-45BE-9350-6BDE3BE6DB30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.PresentationLayer", "Task\Task6.PresentationLayer.csproj", "{41C212C8-E2C2-45BE-9350-6BDE3BE6DB30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.DataAccessLayer", "Task.DataAccessLayer\Task.DataAccessLayer.csproj", "{F082620F-4060-48ED-90AB-4C866661CF3B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.DataAccessLayer", "Task.DataAccessLayer\Task6.DataAccessLayer.csproj", "{F082620F-4060-48ED-90AB-4C866661CF3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.CoreLayer", "Task.CoreLayer\Task.CoreLayer.csproj", "{00FD12CC-8125-4EF9-AEDB-370CB3A83678}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.CoreLayer", "Task.CoreLayer\Task6.CoreLayer.csproj", "{00FD12CC-8125-4EF9-AEDB-370CB3A83678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task.businessLayer", "Task.businessLayer\Task.businessLayer.csproj", "{35737D5F-E2F2-4BF4-A2C2-AC5BE336CE70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.businessLayer", "Task.businessLayer\Task6.businessLayer.csproj", "{35737D5F-E2F2-4BF4-A2C2-AC5BE336CE70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

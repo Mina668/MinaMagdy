@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Task.CoreLayer\Task.CoreLayer.csproj" />
-    <ProjectReference Include="..\Task.DataAccessLayer\Task.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Task.CoreLayer\Task6.CoreLayer.csproj" />
+    <ProjectReference Include="..\Task.DataAccessLayer\Task6.DataAccessLayer.csproj" />
   </ItemGroup>
 
 </Project>
