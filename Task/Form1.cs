@@ -2,9 +2,11 @@ namespace Task
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly IServiceProvider _serviceProvider;
+        public Form1(IServiceProvider serviceProvider)
         {
             InitializeComponent();
+            _serviceProvider = _serviceProvider;
         }
 
         private void label1_Click(object sender, EventArgs e)

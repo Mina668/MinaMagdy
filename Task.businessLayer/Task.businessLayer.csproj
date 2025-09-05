@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Task.CoreLayer\Task.CoreLayer.csproj" />
+    <ProjectReference Include="..\Task.DataAccessLayer\Task.DataAccessLayer.csproj" />
+  </ItemGroup>
+
 </Project>

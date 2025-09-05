@@ -8,7 +8,7 @@ using Task.DataAccessLayer.Models;
 
 namespace Task.DataAccessLayer
 {
-    internal class TaskDbContext: DbContext
+    public class TaskDbContext: DbContext
     {
         public DbSet<Employee>Employees { get; set; }
         public TaskDbContext(DbContextOptions<TaskDbContext> options) : base(options)

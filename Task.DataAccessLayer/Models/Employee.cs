@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Task.DataAccessLayer.Models
 {
-    internal class Employee
+    public class Employee
     {
         [Key]
         public int Id { get; set; }
@@ -24,7 +24,11 @@ namespace Task.DataAccessLayer.Models
         [Required]
         public byte[]? Photo { get; set; }= null;
         [NotMapped]
-        public Image displayphoto { get; set; }
+        public Image displayphoto
+        {
+            get =>Photo !=null? Helper.ImageHelper.ConvertByteArrayToImage(Photo):null;
+            set =>Photo = value != null ? Helper.ImageHelper.ConvertImageToByteArray(value) : null;
+        }
 
     }
 }
