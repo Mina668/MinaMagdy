@@ -26,13 +26,17 @@ namespace Task.CoreLayer.Repository
             }
             catch (Exception)
             {
-                return null;
+                return Enumerable.Empty<T>(); // never return null
             }
         }
+
         public T GetById(int id)
         {
-            return _dbSet.Find(id);
+          
+            return _dbSet.AsNoTracking().FirstOrDefault(e => EF.Property<int>(e, "Id") == id);
         }
+
+        
 
         public void Add(T entity)
         {
@@ -40,7 +44,7 @@ namespace Task.CoreLayer.Repository
         }
         public void Update(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
+                    _context.Entry(entity).State = EntityState.Modified;
         }
 
         public void Delete(int Id)

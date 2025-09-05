@@ -24,15 +24,16 @@ namespace Task
                     services.AddScoped<IEmployeeServices, EmployeeService>();
                 })
                 .Build();
-            using(var Scope = host.Services.CreateScope())
+            using (var scope = host.Services.CreateScope())
             {
-                var services = Scope.ServiceProvider;
-                // To customize application configuration such as set high DPI settings or default font,
-                // see https://aka.ms/applicationconfiguration.
+                var services = scope.ServiceProvider;
+
+                var employeeService = services.GetRequiredService<IEmployeeServices>();
+
                 ApplicationConfiguration.Initialize();
-                Application.Run(new Form1(services));
+                Application.Run(new Form1(employeeService));
             }
-           static IHostBuilder CreateHostbuilder()
+            static IHostBuilder CreateHostbuilder()
            {
                 return Host.CreateDefaultBuilder().ConfigureAppConfiguration((hostingContext, config) =>
                 {

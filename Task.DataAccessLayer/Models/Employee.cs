@@ -26,8 +26,8 @@ namespace Task.DataAccessLayer.Models
         [NotMapped]
         public Image displayphoto
         {
-            get =>Photo !=null? Helper.ImageHelper.ConvertByteArrayToImage(Photo):null;
-            set =>Photo = value != null ? Helper.ImageHelper.ConvertImageToByteArray(value) : null;
+            get => Photo != null ? Helper.ImageHelper.ConvertByteArrayToImage(Photo) : null;
+            set => Photo = value != null ? Helper.ImageHelper.ConvertImageToByteArray(value) : null;
         }
 
     }

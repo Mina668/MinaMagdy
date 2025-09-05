@@ -1,5 +1,5 @@
 ﻿{
-  ConnectionStrings: {
+  "ConnectionStrings": {
     "DefaultConnection": "Data Source=.;Initial Catalog=TaskDb;Integrated Security=True;Encrypt=True;Trust Server Certificate=True;"
   }
 }

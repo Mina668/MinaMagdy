@@ -30,13 +30,12 @@
         {
             label1 = new Label();
             button1 = new Button();
-            textBox1 = new TextBox();
+            txtJob = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtSalary = new TextBox();
+            txtName = new TextBox();
             dataGridView1 = new DataGridView();
             button2 = new Button();
             button3 = new Button();
@@ -47,6 +46,7 @@
             label6 = new Label();
             textBox5 = new TextBox();
             button5 = new Button();
+            txtid = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -71,12 +71,13 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // textBox1
+            // txtJob
             // 
-            textBox1.Location = new Point(127, 113);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(207, 27);
-            textBox1.TabIndex = 2;
+            txtJob.Location = new Point(127, 113);
+            txtJob.Name = "txtJob";
+            txtJob.Size = new Size(207, 27);
+            txtJob.TabIndex = 2;
+            txtJob.TextChanged += txtJob_TextChanged;
             // 
             // label2
             // 
@@ -86,6 +87,7 @@
             label2.Size = new Size(52, 20);
             label2.TabIndex = 3;
             label2.Text = "Name:";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -107,28 +109,21 @@
             label4.Text = "Salary";
             label4.Click += label4_Click;
             // 
-            // textBox2
+            // txtSalary
             // 
-            textBox2.Location = new Point(127, 144);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(207, 27);
-            textBox2.TabIndex = 6;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtSalary.Location = new Point(127, 144);
+            txtSalary.Name = "txtSalary";
+            txtSalary.Size = new Size(207, 27);
+            txtSalary.TabIndex = 6;
+            txtSalary.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
+            // txtName
             // 
-            textBox3.Location = new Point(127, 79);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(207, 27);
-            textBox3.TabIndex = 7;
-            textBox3.TextChanged += textBox3_TextChanged;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(127, 23);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(94, 27);
-            textBox4.TabIndex = 8;
+            txtName.Location = new Point(127, 79);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(207, 27);
+            txtName.TabIndex = 7;
+            txtName.TextChanged += textBox3_TextChanged;
             // 
             // dataGridView1
             // 
@@ -148,6 +143,7 @@
             button2.TabIndex = 10;
             button2.Text = "Edit";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -157,6 +153,7 @@
             button3.TabIndex = 11;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // pictureBox1
             // 
@@ -183,6 +180,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(309, 28);
             comboBox1.TabIndex = 14;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button4
             // 
@@ -192,6 +190,7 @@
             button4.TabIndex = 15;
             button4.Text = ".....";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label6
             // 
@@ -208,6 +207,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(294, 27);
             textBox5.TabIndex = 17;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // button5
             // 
@@ -217,12 +217,22 @@
             button5.TabIndex = 18;
             button5.Text = "Show";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
+            // txtid
+            // 
+            txtid.Location = new Point(127, 23);
+            txtid.Name = "txtid";
+            txtid.ReadOnly = true;
+            txtid.Size = new Size(70, 27);
+            txtid.TabIndex = 19;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 557);
+            Controls.Add(txtid);
             Controls.Add(button5);
             Controls.Add(textBox5);
             Controls.Add(label6);
@@ -233,13 +243,12 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(dataGridView1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(txtName);
+            Controls.Add(txtSalary);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtJob);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Form1";
@@ -254,13 +263,12 @@
 
         private Label label1;
         private Button button1;
-        private TextBox textBox1;
+        private TextBox txtJob;
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtSalary;
+        private TextBox txtName;
         private DataGridView dataGridView1;
         private Button button2;
         private Button button3;
@@ -271,5 +279,6 @@
         private Label label6;
         private TextBox textBox5;
         private Button button5;
+        private TextBox txtid;
     }
 }

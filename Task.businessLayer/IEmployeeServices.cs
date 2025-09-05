@@ -14,5 +14,6 @@ namespace Task.businessLayer
         void UpdateEmployee(Employee employee);
         void DeleteEmployee(int id);
         int GetEmployeeCount();
+     
     }
 }
