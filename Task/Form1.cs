@@ -44,10 +44,24 @@ namespace Task
 
             dataGridView1.DataSource = employees;
             comboBox1.DataSource = employees;
-            comboBox1.DisplayMember = "Name";  // what the user sees
+            comboBox1.DisplayMember = "Name";  
             comboBox1.ValueMember = "Id";
         }
-
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = dataGridView1.Rows[e.RowIndex].DataBoundItem as Employee;
+                if (row != null)
+                {
+                    txtid.Text = row.Id.ToString();
+                    txtName.Text = row.Name;
+                    txtJob.Text = row.Job;
+                    txtSalary.Text = row.Salary.ToString();
+                    pictureBox1.Image = row.displayphoto;
+                }
+            }
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -67,51 +81,7 @@ namespace Task
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var row = dataGridView1.Rows[e.RowIndex].DataBoundItem as Employee;
-                if (row != null)
-                {
-                    txtid.Text = row.Id.ToString();
-                    txtName.Text = row.Name;
-                    txtJob.Text = row.Job;
-                    txtSalary.Text = row.Salary.ToString();
-                    pictureBox1.Image = row.displayphoto;
-                }
-            }
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            double salary = 0;
-            if (!double.TryParse(txtSalary.Text, out salary))
-            {
-                MessageBox.Show("Please enter a valid salary!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // stop saving
-            }
-
-            var emp = new Employee
-            {
-                Name = txtName.Text,
-                Job = txtJob.Text,
-                Salary = salary, // safe value
-                displayphoto = pictureBox1.Image
-            };
-
-
-            _employeeService.AddEmployee(emp);
-            LoadEmployees();
-            MessageBox.Show("Employee added successfully!");
-            txtid.Text = "";
-            txtName.Clear();
-            txtJob.Clear();
-            txtSalary.Clear();
-            pictureBox1.Image = null;
-        }
+        }   
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -159,7 +129,34 @@ namespace Task
                 }
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+            double salary = 0;
+            if (!double.TryParse(txtSalary.Text, out salary))
+            {
+                MessageBox.Show("Please enter a valid salary!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // stop saving
+            }
+
+            var emp = new Employee
+            {
+                Name = txtName.Text,
+                Job = txtJob.Text,
+                Salary = salary, // safe value
+                displayphoto = pictureBox1.Image
+            };
+
+
+            _employeeService.AddEmployee(emp);
+            LoadEmployees();
+            MessageBox.Show("Employee added successfully!");
+            txtid.Text = "";
+            txtName.Clear();
+            txtJob.Clear();
+            txtSalary.Clear();
+            pictureBox1.Image = null;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow != null)
@@ -186,13 +183,14 @@ namespace Task
 
                     _employeeService.UpdateEmployee(emp);
                     LoadEmployees();
-                    MessageBox.Show("Employee updated successfully!");
                     txtid.Clear();
                     txtName.Clear();
                     txtJob.Clear();
                     txtSalary.Clear();
                     pictureBox1.Image = null;
                     _photoChanged = false;
+                    MessageBox.Show("Employee updated successfully!");
+                    
                 }
             }
         }
@@ -205,12 +203,13 @@ namespace Task
                 int id = int.Parse(txtid.Text);
                 _employeeService.DeleteEmployee(id);
                 LoadEmployees();
-                MessageBox.Show("Employee deleted successfully!");
                 txtid.Clear();
                 txtName.Clear();
                 txtJob.Clear();
-                txtSalary.Clear(); 
+                txtSalary.Clear();
                 pictureBox1.Image = null;
+                _photoChanged = false;
+                MessageBox.Show("Employee deleted successfully!");                
             }
         }
         
