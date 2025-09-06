@@ -1,11 +1,11 @@
-using Task.businessLayer ;
+using Task6.businessLayer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Task.DataAccessLayer;
+using Task6.DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
-using Task.CoreLayer.UnitOfWork;
-namespace Task
+using Task6.CoreLayer.UnitOfWork;
+namespace Task6.PresentationLayer
 {
     internal static class Program
     {

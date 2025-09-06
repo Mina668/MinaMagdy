@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task.CoreLayer.UnitOfWork;
-using Task.DataAccessLayer.Models;
+using Task6.CoreLayer.UnitOfWork;
+using Task6.DataAccessLayer.Models;
 
-namespace Task.businessLayer
+namespace Task6.businessLayer
 {
     public class EmployeeService : IEmployeeServices
     {

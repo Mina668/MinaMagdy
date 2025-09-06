@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Task.DataAccessLayer.Models;
-
-namespace Task.DataAccessLayer
+using Task6.DataAccessLayer.Models;
+    
+namespace Task6.DataAccessLayer
 {
     public class TaskDbContext: DbContext
     {

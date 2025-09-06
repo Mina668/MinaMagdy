@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Task.DataAccessLayer;
+using Task6.DataAccessLayer;
 
-namespace Task.CoreLayer.Repository
+namespace Task6.CoreLayer.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {

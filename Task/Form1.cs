@@ -1,9 +1,9 @@
-using Task.businessLayer;
-using Task.CoreLayer.UnitOfWork;
-using Task.DataAccessLayer.Models;
+using Task6.businessLayer;
+using Task6.CoreLayer.UnitOfWork;
+using Task6.DataAccessLayer.Models;
 using System.Drawing.Imaging;
 
-namespace Task
+namespace Task6.PresentationLayer
 {
     public partial class Form1 : Form
     {

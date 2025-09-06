@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Task.DataAccessLayer.Helper
+namespace Task6.DataAccessLayer.Helper
 {
     public static class ImageHelper
     {

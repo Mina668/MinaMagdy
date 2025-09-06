@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task.CoreLayer.Repository;
-using Task.DataAccessLayer;
-using Task.DataAccessLayer.Models;
-
-namespace Task.CoreLayer.UnitOfWork
+using Task6.CoreLayer.Repository;
+using Task6.DataAccessLayer;
+using Task6.DataAccessLayer.Models;
+    
+namespace Task6.CoreLayer.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

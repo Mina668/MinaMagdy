@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Task.DataAccessLayer.Migrations
+namespace Task6.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

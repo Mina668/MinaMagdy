@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-namespace Task.DataAccessLayer.Models
+namespace Task6.DataAccessLayer.Models
 {
     public class Employee
     {

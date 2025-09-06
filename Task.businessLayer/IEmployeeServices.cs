@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task.DataAccessLayer.Models;
-namespace Task.businessLayer
+using Task6.DataAccessLayer.Models;
+namespace Task6.businessLayer
 {
     public interface IEmployeeServices
     {

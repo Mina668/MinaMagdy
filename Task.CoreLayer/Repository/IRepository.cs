@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task.CoreLayer.Repository
+namespace Task6.CoreLayer.Repository
 {
     public interface IRepository<T> where T : class
     {

@@ -1,4 +1,4 @@
-﻿namespace Task
+﻿namespace Task6.PresentationLayer
 {
     partial class Form1
     {
