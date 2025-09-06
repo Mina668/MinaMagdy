@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.CoreLayer", "Task.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task6.businessLayer", "Task.businessLayer\Task6.businessLayer.csproj", "{35737D5F-E2F2-4BF4-A2C2-AC5BE336CE70}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task6", "Task6", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41C212C8-E2C2-45BE-9350-6BDE3BE6DB30} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{F082620F-4060-48ED-90AB-4C866661CF3B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{00FD12CC-8125-4EF9-AEDB-370CB3A83678} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{35737D5F-E2F2-4BF4-A2C2-AC5BE336CE70} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D201A7C-90BC-4E3C-9E63-ED2F92C936C8}
